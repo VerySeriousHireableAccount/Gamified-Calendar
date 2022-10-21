@@ -17,21 +17,27 @@ class GamifiedCalendarApplicationTests {
 	}
 
 	@Test
-	void accountTests() {
-		Account a = new Account();
+	void taskTests() {
+		Task t = new Task();
 		String name = "Do homework";
-		a.setTaskname(name);
-		assertEquals(name, a.getTaskName());
+		t.setTaskName(name);
+		assertEquals(name, t.getTaskName());
 		assertEquals(1, 1);
 		String description = "Java project, chemistry worksheet, physics homework all need to be done";
-		a.setTaskDescription(description);
-		assertEquals(description, a.getTaskDescription());
+		t.setTaskDescription(description);
+		assertEquals(description, t.getTaskDescription());
 		int taskPoints = 5;
-		a.setTaskPoints(taskPoints);
-		assertEquals(taskPoints, a.getTaskPoints());
+		t.setTaskPoints(taskPoints);
+		assertEquals(taskPoints, t.getTaskPoints());
 		boolean taskStatus = true;
-		a.setTaskStatus(taskStatus);
-		assertEquals(taskStatus, a.getTaskStatus());
+		t.setTaskStatus(taskStatus);
+		assertEquals(taskStatus, t.getTaskStatus());
+
+	}
+
+	@Test
+	void accountTests() {
+		Account a = new Account();
 
 	}
 
