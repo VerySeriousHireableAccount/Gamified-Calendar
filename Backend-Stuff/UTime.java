@@ -8,43 +8,36 @@ class UTime implements Comparable<UTime> {
     long time;
 
     //Initializes time as the current time]
-    public UTime()
-    {
+    public UTime() {
         time = System.currentTimeMillis() / 1000;
     }
 
-    public boolean isBefore(UTime other)
-    {
+    public boolean isBefore(UTime other) {
         return  duration(this, other) >= 0;
     }
 
 
-    public int compareTo(UTime other)
-    {
+    public int compareTo(UTime other) {
         long d = duration(this, other);
         return (d==0 ? 0 : (d>0 ? -1 : 1) );
 
     }
     //Initializes time as the given value
-    public UTime(long _time)
-    {
+    public UTime(long _time) {
         time = _time;
     }
 
     //Get the time
-    public long getTime()
-    {
+    public long getTime() {
         return time;
     }
 
     //Set the time
-    public void setTime(long _time)
-    {
+    public void setTime(long _time) {
         time = _time;
     }
 
-    static long duration(UTime start, UTime end)
-    {
+    static long duration(UTime start, UTime end) {
         return (start.time-end.time);
     }
 }

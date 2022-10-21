@@ -9,8 +9,7 @@ class EventTime {
 
     UTime startTime;
     UTime endTime;
-    public EventTime(UTime _startTime, UTime _endTime)
-    {
+    public EventTime(UTime _startTime, UTime _endTime) {
         if( _endTime.compareTo(_startTime) < 0)
             throw new IllegalArgumentException();
 
@@ -19,15 +18,13 @@ class EventTime {
     }
 
     //Returns true if any part of the event is in the range
-    public boolean partiallyInRange(UTime start, UTime end)
-    {
+    public boolean partiallyInRange(UTime start, UTime end) {
         return  (endTime.isBefore(end) && start.isBefore(endTime)) ||
                 (start.isBefore(startTime) && startTime.isBefore((end))) ;
     }
 
     //Returns true if the full event is in the range
-    public boolean fullyInRange(UTime start, UTime end)
-    {
+    public boolean fullyInRange(UTime start, UTime end) {
         return end.isBefore(end) && start.isBefore(startTime);
     }
 }
