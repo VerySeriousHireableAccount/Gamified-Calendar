@@ -9,8 +9,6 @@ class EventTime {
 
     UTime startTime;
     UTime endTime;
-
-    //Constructors
     public EventTime(UTime _startTime, UTime _endTime)
     {
         if( _startTime >= _endTime)
@@ -19,7 +17,6 @@ class EventTime {
         startTime = _startTime;
         endTime = _endTime;
     }
-    ////
 
     //Returns true if any part of the event is in the range
     public boolean partiallyInRange(UTime start, UTime end)
