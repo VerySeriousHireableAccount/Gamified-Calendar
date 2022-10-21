@@ -9,28 +9,27 @@ class CalendarEvent
 
     String eventDescription = "";
 
-    public CalendarEvent(String name, UTime startTime, UTime endTime)
+    public CalendarEvent(String name, EventTime time)
     {
         eventName = name;
-        eventTime = new EventTime(startTime, endTime);
+        eventTime = time;
+    }
+
+    public CalendarEvent(String name, UTime startTime, UTime endTime)
+    {
+        this(name, new EventTime(startTime,endTime));
     }
 
     public CalendarEvent(String name, UTime startTime, UTime endTime, String desc)
     {
-        eventDescription = desc;
         this(name, startTime, endTime);
-    }
-
-    public CalendarEvent(String name, EventTime time)
-    {
         eventDescription = desc;
-        eventTime = time;
     }
 
     public CalendarEvent(String name, EventTime time, String desc)
     {
-        eventDescription = desc;
         this(name, time);
+        eventDescription = desc;
     }
 
     public String getEventName()

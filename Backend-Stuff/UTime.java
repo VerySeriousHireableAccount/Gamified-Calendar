@@ -2,7 +2,7 @@
 //This is just to enforce our conventions for storing and manipulating times
 //Time is stored as UNIX time - the number of seconds since jan 1, 1970
 
-class UTime implements Comparable {
+class UTime implements Comparable<UTime> {
 
     //The time, stored in seconds since jan 1, 1970
     long time;
@@ -13,7 +13,13 @@ class UTime implements Comparable {
         time = System.currentTimeMillis() / 1000;
     }
 
-    public int compareTo(Time other)
+    public boolean isBefore(UTime other)
+    {
+        return  duration(this, other) >= 0;
+    }
+
+
+    public int compareTo(UTime other)
     {
         long d = duration(this, other);
         return (d==0 ? 0 : (d>0 ? -1 : 1) );
@@ -32,7 +38,7 @@ class UTime implements Comparable {
     }
 
     //Set the time
-    public long setTime(long _time)
+    public void setTime(long _time)
     {
         time = _time;
     }
