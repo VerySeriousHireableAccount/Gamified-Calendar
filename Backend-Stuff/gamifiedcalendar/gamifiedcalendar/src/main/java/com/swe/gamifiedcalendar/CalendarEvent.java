@@ -32,6 +32,14 @@ public class CalendarEvent
         return eventID;
     }
 
+    public EventTime getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(EventTime eventTime) {
+        this.eventTime = eventTime;
+    }
+
     public CalendarEvent(String name, EventTime time, String desc) {
         this(name, time);
         eventDescription = desc;

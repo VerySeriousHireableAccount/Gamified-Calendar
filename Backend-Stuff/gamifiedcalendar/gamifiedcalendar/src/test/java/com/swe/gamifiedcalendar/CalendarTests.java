@@ -1,24 +1,15 @@
 package com.swe.gamifiedcalendar;
 
-import com.swe.gamifiedcalendar.Calendar;
-import com.swe.gamifiedcalendar.CalendarEvent;
-import com.swe.gamifiedcalendar.EventTime;
-import com.swe.gamifiedcalendar.UTime;
 import org.junit.jupiter.api.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalendarTests {
 
     Calendar c;
 
-    @BeforeAll
-    void setUp(){
-        c = new Calendar();
-    }
-
     @Test
     void nameChangedCorrectly(){
+        c = new Calendar();
         String name = "test 1";
         c.setCalendarName(name);
         assertEquals(c.getCalendarName(), name, "Name should have changed to 'test 1'");
@@ -30,12 +21,14 @@ public class CalendarTests {
 
     static String default_calendar_name = "new calendar";
     @Test
-    void nameIninitializedCorrectlyToDefault(){
+    void nameInitializedCorrectlyToDefault(){
+        c = new Calendar();
         assertEquals(c.getCalendarName(), default_calendar_name, "Name should have initialized as " + default_calendar_name);
     }
 
     @Test
     void nameInitializedCorrectly(){
+        c = new Calendar();
         String name = "test name";
         Calendar c = new Calendar(name);
         assertEquals(c.getCalendarName(), name, "Name should have initialized as " + name);
@@ -43,6 +36,7 @@ public class CalendarTests {
 
     @Test
     void addEvent(){
+        c = new Calendar();
         UTime start = new UTime(0);
         UTime end = new UTime(10);
         CalendarEvent event = new CalendarEvent("Test event", new EventTime(start, end));
@@ -53,6 +47,7 @@ public class CalendarTests {
 
     @Test
     void RemoveEvent(){
+        c = new Calendar();
         UTime start = new UTime(0);
         UTime end = new UTime(10);
         CalendarEvent event = new CalendarEvent("Test event", new EventTime(start, end));
@@ -65,6 +60,7 @@ public class CalendarTests {
 
     @Test
     void GetEventsInRange(){
+        c = new Calendar();
         UTime t1 = new UTime(0);
         UTime t2 = new UTime(5);
         UTime t3 = new UTime(10);
