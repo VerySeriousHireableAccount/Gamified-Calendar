@@ -5,14 +5,16 @@ import com.swe.gamifiedcalendar.CalendarEvent;
 import com.swe.gamifiedcalendar.EventTime;
 import com.swe.gamifiedcalendar.UTime;
 import org.junit.jupiter.api.*;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class CalendarTests {
 
     Calendar c;
 
-    @BeforeAll
+    @BeforeEach
     void setUp(){
         c = new Calendar();
     }
