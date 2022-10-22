@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Calendar {
 
     String calendarName = "new calendar";
-    ArrayList<CalendarEvent> eventList;
+    ArrayList<CalendarEvent> eventList = new ArrayList<>();
 
     public Calendar() { }
     public Calendar(String calendarName) {

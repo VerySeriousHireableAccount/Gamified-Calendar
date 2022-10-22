@@ -12,7 +12,7 @@ public class UTime implements Comparable<UTime> {
     }
 
     public boolean isBefore(UTime other) {
-        return  duration(this, other) >= 0;
+        return duration(this, other) >= 0;
     }
 
     public int compareTo(UTime other) {
@@ -35,6 +35,6 @@ public class UTime implements Comparable<UTime> {
     }
 
     static long duration(UTime start, UTime end) {
-        return (start.time-end.time);
+        return (end.time - start.time);
     }
 }
