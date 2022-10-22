@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ContextWrapper from "./context/ContextWrapper";
+import {BrowserRouter} from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
-    <ContextWrapper>
-      <App />
-    </ContextWrapper>
+    <BrowserRouter>
+      <ContextWrapper>
+        <App />
+      </ContextWrapper>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
