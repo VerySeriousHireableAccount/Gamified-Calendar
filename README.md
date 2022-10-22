@@ -1,2 +1,2 @@
-# Gamified-Calendar
-This repository is dedicated to the Gamified Calendar project for CSDS 393 (software engineering). The dev team is Levent, David, Jo, Smyan, and Dillon.
+# Gamified-gamifiedcalendar.gamifiedcalendar.src.main.java.com.swe.gamifiedcalendar.gamifiedcalendar.gamifiedcalendar.src.main.java.com.swe.gamifiedcalendar.Calendar
+This repository is dedicated to the Gamified gamifiedcalendar.gamifiedcalendar.src.main.java.com.swe.gamifiedcalendar.gamifiedcalendar.gamifiedcalendar.src.main.java.com.swe.gamifiedcalendar.Calendar project for CSDS 393 (software engineering). The dev team is Levent, David, Jo, Smyan, and Dillon.

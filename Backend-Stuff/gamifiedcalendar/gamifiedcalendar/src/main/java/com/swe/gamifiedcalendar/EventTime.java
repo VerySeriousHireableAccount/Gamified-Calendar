@@ -1,3 +1,4 @@
+package com.swe.gamifiedcalendar;
 //Author: Levent Batakci
 //
 //This class describes when an event occurs.
@@ -5,7 +6,7 @@
 //That is, EvenTime need not describe just one contiguous chunk of time.
 
 //Right now, we have a very basic implementation for the sake of the demo
-class EventTime {
+public class EventTime {
 
     UTime startTime;
     UTime endTime;
