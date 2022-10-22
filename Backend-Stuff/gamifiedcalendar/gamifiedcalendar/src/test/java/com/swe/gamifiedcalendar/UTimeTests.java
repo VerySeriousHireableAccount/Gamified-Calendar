@@ -2,7 +2,7 @@ package com.swe.gamifiedcalendar;
 
 import org.junit.jupiter.api.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UTimeTests {
 
