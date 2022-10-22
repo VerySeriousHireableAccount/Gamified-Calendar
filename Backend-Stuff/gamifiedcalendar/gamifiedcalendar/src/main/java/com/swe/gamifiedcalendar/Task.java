@@ -73,11 +73,11 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return getTaskID() == task.getTaskID() && getTaskPoints() == task.getTaskPoints() && isTaskStatus() == task.isTaskStatus() && Objects.equals(getTaskName(), task.getTaskName()) && Objects.equals(getTaskDescription(), task.getTaskDescription()) && Objects.equals(getTaskStartDate(), task.getTaskStartDate()) && Objects.equals(getTaskDeadline(), task.getTaskDeadline());
+        return getTaskID() == task.getTaskID() && getTaskPoints() == task.getTaskPoints() && getTaskStatus() == task.getTaskStatus() && Objects.equals(getTaskName(), task.getTaskName()) && Objects.equals(getTaskDescription(), task.getTaskDescription()) && Objects.equals(getTaskStartDate(), task.getTaskStartDate()) && Objects.equals(getTaskDeadline(), task.getTaskDeadline());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTaskID(), getTaskName(), getTaskDescription(), getTaskPoints(), getTaskStartDate(), getTaskDeadline(), isTaskStatus());
+        return Objects.hash(getTaskID(), getTaskName(), getTaskDescription(), getTaskPoints(), getTaskStartDate(), getTaskDeadline(), getTaskStatus());
     }
 }

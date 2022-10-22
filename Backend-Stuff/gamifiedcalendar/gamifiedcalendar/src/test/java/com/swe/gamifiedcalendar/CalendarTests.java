@@ -1,19 +1,18 @@
-package gamifiedcalendar.gamifiedcalendar.src.test.java.com.swe.gamifiedcalendar;
+package com.swe.gamifiedcalendar;
 
 import com.swe.gamifiedcalendar.Calendar;
 import com.swe.gamifiedcalendar.CalendarEvent;
 import com.swe.gamifiedcalendar.EventTime;
 import com.swe.gamifiedcalendar.UTime;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.*;
 
-import static org.testng.AssertJUnit.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalendarTests {
 
     Calendar c;
 
-    @BeforeTest
+    @BeforeAll
     void setUp(){
         c = new Calendar();
     }
