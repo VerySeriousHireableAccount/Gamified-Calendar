@@ -32,7 +32,6 @@ class GamifiedCalendarApplicationTests {
 		boolean taskStatus = true;
 		t.setTaskStatus(taskStatus);
 		assertEquals(taskStatus, t.getTaskStatus());
-
 	}
 
 	@Test

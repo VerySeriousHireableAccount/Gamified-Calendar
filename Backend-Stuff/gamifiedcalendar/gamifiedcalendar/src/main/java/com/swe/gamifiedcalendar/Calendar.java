@@ -1,12 +1,12 @@
-//Author: Levent Batakci
+package com.swe.gamifiedcalendar;//Author: Levent Batakci
 //This class represents the calendar object, which is responsible for
 //storing and managing events
 
 import java.util.ArrayList;
-class Calendar {
+public class Calendar {
 
     String calendarName = "new calendar";
-    ArrayList<CalendarEvent> eventList;
+    ArrayList<CalendarEvent> eventList = new ArrayList<>();
 
     public Calendar() { }
     public Calendar(String calendarName) {

@@ -1,3 +1,4 @@
+package com.swe.gamifiedcalendar;
 //Author: Levent Batakci
 //
 //This class describes when an event occurs.
@@ -5,7 +6,7 @@
 //That is, EvenTime need not describe just one contiguous chunk of time.
 
 //Right now, we have a very basic implementation for the sake of the demo
-class EventTime {
+public class EventTime {
 
     UTime startTime;
     UTime endTime;
@@ -20,7 +21,23 @@ class EventTime {
     //Returns true if any part of the event is in the range
     public boolean partiallyInRange(UTime start, UTime end) {
         return  (endTime.isBefore(end) && start.isBefore(endTime)) ||
-                (start.isBefore(startTime) && startTime.isBefore((end))) ;
+                (start.isBefore(startTime) && startTime.isBefore((end)));
+    }
+
+    public UTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(UTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public UTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(UTime endTime) {
+        this.endTime = endTime;
     }
 
     //Returns true if the full event is in the range

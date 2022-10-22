@@ -1,9 +1,9 @@
-//Author: Levent Batakci
+package com.swe.gamifiedcalendar;//Author: Levent Batakci
 //This object organizes all of the information pertaining to an event
 
 import java.util.Objects;
 
-class CalendarEvent
+public class CalendarEvent
 {
     int eventID;
     String eventName;
@@ -30,6 +30,14 @@ class CalendarEvent
     }
     public int getID(){
         return eventID;
+    }
+
+    public EventTime getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(EventTime eventTime) {
+        this.eventTime = eventTime;
     }
 
     public CalendarEvent(String name, EventTime time, String desc) {
