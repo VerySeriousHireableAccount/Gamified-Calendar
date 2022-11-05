@@ -11,6 +11,15 @@ public class Account {
     private int currentStreak;
     private int totalPoints;
 
+    public Account(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.bestStreak = 0;
+        this.currentStreak = 0;
+        this.totalPoints = 0;
+    }
+
     public int getAccountID() {
         return accountID;
     }
