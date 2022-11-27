@@ -39,7 +39,7 @@ public class GamifiedCalendarApplication {
 			}
 			log.info("");
 
-			Account customer = repository.findById(2);
+			Account customer = repository.findById(2L);
 			log.info("Account with ID 2:");
 			log.info("--------------------------------");
 			log.info(customer.toString());

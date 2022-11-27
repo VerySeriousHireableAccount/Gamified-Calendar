@@ -1,10 +1,17 @@
 package com.swe.gamifiedcalendar;
 
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Task {
 
-    private int taskID;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long taskID;
     private String taskName;
     private String taskDescription;
     private int taskPoints;
@@ -12,11 +19,11 @@ public class Task {
     private UTime taskDeadline;
     private boolean taskStatus;
 
-    public int getTaskID() {
+    public long getTaskID() {
         return taskID;
     }
 
-    public void setTaskID(int taskID) {
+    public void setTaskID(long taskID) {
         this.taskID = taskID;
     }
 

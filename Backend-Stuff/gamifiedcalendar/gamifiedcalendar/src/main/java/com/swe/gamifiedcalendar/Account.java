@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Account {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int accountID;
+    private long accountID;
     private String username;
     private String email;
     private String password;
@@ -27,11 +27,11 @@ public class Account {
         this.totalPoints = 0;
     }
 
-    public int getAccountID() {
+    public long getAccountID() {
         return accountID;
     }
 
-    public void setAccountID(int accountID) {
+    public void setAccountID(long accountID) {
         this.accountID = accountID;
     }
 
