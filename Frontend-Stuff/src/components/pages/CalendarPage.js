@@ -1,11 +1,11 @@
+//render calendar matrix
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "../../styling/LoginStyling.css";
-import { useState, useContext, useEffect } from "react";
-import { getMonth } from "../../util";
+import { useState, useContext, useEffect } from "react"; //hook
+import { getMonth } from "../../util"; //import util calendar matrix
 import CalendarHeader from "../CalendarHeader";
-import Sidebar from "../Sidebar";
+import Sidebarcalendar from "../Sidebarcalendar";
 import Month from "../Month";
 import GlobalContext from "../../context/GlobalContext";
 import EventModal from "../EventModal";
@@ -17,14 +17,17 @@ export default function CalendarPage() {
   useEffect(() => {
     setCurrentMonth(getMonth(monthIndex));
   }, [monthIndex]);
-
+  /*Fragment is invisible parent, not represented as node */
   return (
     <React.Fragment>
       {showEventModal && <EventModal />}
+      {/* tailwind class, fill screen height, flex column */}
       <div className="h-screen flex flex-col">
         <CalendarHeader />
+        {/* flex-1 cover rest of the page */}
         <div className="flex flex-1">
-          <Sidebar />
+          <Sidebarcalendar />
+          {/*pass current month parameter in*/}
           <Month month={currenMonth} />
         </div>
       </div>
