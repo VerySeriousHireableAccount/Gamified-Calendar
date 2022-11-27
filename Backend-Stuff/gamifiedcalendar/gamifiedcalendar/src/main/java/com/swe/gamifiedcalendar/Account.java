@@ -1,8 +1,15 @@
 package com.swe.gamifiedcalendar;
 
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Account {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int accountID;
     private String username;
     private String email;
@@ -10,7 +17,7 @@ public class Account {
     private int bestStreak;
     private int currentStreak;
     private int totalPoints;
-
+    protected Account() {}
     public Account(String username, String email, String password) {
         this.username = username;
         this.email = email;
@@ -93,5 +100,12 @@ public class Account {
     @Override
     public int hashCode() {
         return Objects.hash(getAccountID(), getUsername(), getEmail(), getPassword(), getBestStreak(), getCurrentStreak(), getTotalPoints());
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Account[id=%d, username='%s', email='%s', password='%s', bestStreak='%d', currentStreak='%d', totalPoints='%d']",
+                accountID, username, email, password, bestStreak, currentStreak, totalPoints);
     }
 }
