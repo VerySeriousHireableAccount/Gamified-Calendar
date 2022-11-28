@@ -15,8 +15,8 @@ public class Task {
     private String taskName;
     private String taskDescription;
     private int taskPoints;
-    private UTime taskStartDate;
-    private UTime taskDeadline;
+    private long taskStartDate;
+    private long taskDeadline;
     private boolean taskStatus;
 
     public long getTaskID() {
@@ -59,19 +59,19 @@ public class Task {
         this.taskDescription = taskDescription;
     }
 
-    public UTime getTaskStartDate() {
+    public long getTaskStartDate() {
         return taskStartDate;
     }
 
-    public void setTaskStartDate(UTime taskStartDate) {
+    public void setTaskStartDate(long taskStartDate) {
         this.taskStartDate = taskStartDate;
     }
 
-    public UTime getTaskDeadline() {
+    public long getTaskDeadline() {
         return taskDeadline;
     }
 
-    public void setTaskDeadline(UTime taskDeadline) {
+    public void setTaskDeadline(long taskDeadline) {
         this.taskDeadline = taskDeadline;
     }
 
