@@ -335,7 +335,7 @@ export const dropdownData = [
   },
   {
     Id: "3",
-    Time: "September 2022",
+    Time: "September",
   },
 ];
 //Recent task
