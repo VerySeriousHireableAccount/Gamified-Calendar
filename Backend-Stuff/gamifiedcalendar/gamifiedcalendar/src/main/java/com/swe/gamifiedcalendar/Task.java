@@ -1,10 +1,7 @@
 package com.swe.gamifiedcalendar;
 
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Task {
@@ -18,6 +15,32 @@ public class Task {
     private long taskStartDate;
     private long taskDeadline;
     private boolean taskStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "account_account_id")
+    private Account account;
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public Task(){
+
+    }
+
+    public Task(String taskName, String taskDescription, int taskPoints, long taskStartDate, long taskDeadline, boolean taskStatus, Account account) {
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskPoints = taskPoints;
+        this.taskStartDate = taskStartDate;
+        this.taskDeadline = taskDeadline;
+        this.taskStatus = taskStatus;
+        this.account = account;
+    }
 
     public long getTaskID() {
         return taskID;
@@ -86,5 +109,12 @@ public class Task {
     @Override
     public int hashCode() {
         return Objects.hash(getTaskID(), getTaskName(), getTaskDescription(), getTaskPoints(), getTaskStartDate(), getTaskDeadline(), getTaskStatus());
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Task[taskID=%d, taskName='%s', taskDescription='%s', taskPoints='%d', taskStartDate='%d', taskDeadline='%d', taskStatus='%b']",
+                taskID, taskName, taskDescription, taskPoints, taskStartDate, taskDeadline, taskStatus);
     }
 }

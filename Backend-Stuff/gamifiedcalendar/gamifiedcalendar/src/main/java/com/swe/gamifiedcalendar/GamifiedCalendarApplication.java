@@ -26,7 +26,7 @@ public class GamifiedCalendarApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(AccountRepository repository) {
+	public CommandLineRunner demo(AccountRepository repository, TaskRepository taskRepository) {
 		return (args) -> {
 			repository.save(new Account("martingarrix", "mg@mg.com", "highOnLife"));
 			repository.save(new Account("djsixbeeps", "sixbeeps@sixbeeps.com", "DG"));
@@ -46,6 +46,17 @@ public class GamifiedCalendarApplication {
 			log.info("");
 
 			log.info("");
+
+			//customer.addTasks(new Task("Laundry", "Do the laundry", 10, 1669661670, 1669661671, false));
+			taskRepository.save(new Task("Laundry", "Do the laundry", 10, 1669661670, 1669661671, false, customer));
+			customer = repository.findById(2L);
+			log.info("Tasks for account with ID 2:");
+			log.info("--------------------------------");
+			log.info(customer.getTasks().toString());
+			log.info("");
+
+			log.info("");
 		};
 	}
+
 }
