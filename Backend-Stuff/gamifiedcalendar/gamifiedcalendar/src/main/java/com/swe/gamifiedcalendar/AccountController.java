@@ -20,8 +20,8 @@ class AccountController {
     }
 
     @GetMapping("/Accounts/Tasks/{id}")
-    List<Task> tasksForAccount(@PathVariable Long id) {
-        return repository.findById(id).get().getTasks();
+    Account tasksForAccount(@PathVariable Long id) {
+        return repository.findById(id).get();
     }
 
 

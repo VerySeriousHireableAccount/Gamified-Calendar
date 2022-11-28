@@ -32,13 +32,14 @@ public class Task {
 
     }
 
-    public Task(String taskName, String taskDescription, int taskPoints, long taskStartDate, long taskDeadline, boolean taskStatus) {
+    public Task(String taskName, String taskDescription, int taskPoints, long taskStartDate, long taskDeadline, boolean taskStatus, Account account) {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPoints = taskPoints;
         this.taskStartDate = taskStartDate;
         this.taskDeadline = taskDeadline;
         this.taskStatus = taskStatus;
+        this.account = account;
     }
 
     public long getTaskID() {

@@ -18,7 +18,7 @@ public class Account {
     private int currentStreak;
     private int totalPoints;
 
-    @OneToMany(mappedBy="account",fetch=FetchType.EAGER)
+    @OneToMany(cascade=CascadeType.ALL,mappedBy="account",fetch=FetchType.EAGER)
     private List<Task> tasks;
     protected Account() {}
     public Account(String username, String email, String password) {
@@ -28,7 +28,6 @@ public class Account {
         this.bestStreak = 0;
         this.currentStreak = 0;
         this.totalPoints = 0;
-        this.tasks = new ArrayList<>();
     }
 
     public long getAccountID() {
