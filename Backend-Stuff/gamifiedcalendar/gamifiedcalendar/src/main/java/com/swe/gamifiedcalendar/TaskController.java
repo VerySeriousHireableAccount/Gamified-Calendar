@@ -11,35 +11,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-class AccountController {
+class TaskController {
 
-    private final AccountRepository repository;
+    private final TaskRepository repository;
 
-    AccountController(AccountRepository repository) {
+    TaskController(TaskRepository repository) {
         this.repository = repository;
-    }
-
-    @GetMapping("/Accounts/Tasks/{id}")
-    List<Task> tasksForAccount(@PathVariable Long id) {
-        return repository.findById(id).get().getTasks();
     }
 
 
     // Aggregate root
     // tag::get-aggregate-root[]
-    @GetMapping("/Accounts")
-    List<Account> all() {
-        return (List<Account>) repository.findAll();
+    @GetMapping("/Tasks")
+    List<Task> all() {
+        return (List<Task>) repository.findAll();
     }
     // end::get-aggregate-root[]
 
-    @PostMapping("/Accounts")
-    Account newAccount(@RequestBody Account newAccount) {
-        return repository.save(newAccount);
+    @PostMapping("/Tasks")
+    Task newTask(@RequestBody Task newTask) {
+        return repository.save(newTask);
     }
 
-    @DeleteMapping("/Accounts/{id}")
-    void deleteAccount(@PathVariable Long id) {
+    @GetMapping("/Tasks/{id}")
+    List<Task> allForAccount(@PathVariable Long id){
+        return null;
+    }
+
+    @DeleteMapping("/Tasks/{id}")
+    void deleteTask(@PathVariable Long id) {
         repository.deleteById(id);
     }
 }

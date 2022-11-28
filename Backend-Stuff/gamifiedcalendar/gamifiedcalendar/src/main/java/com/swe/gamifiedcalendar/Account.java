@@ -1,10 +1,10 @@
 package com.swe.gamifiedcalendar;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Account {
@@ -17,6 +17,9 @@ public class Account {
     private int bestStreak;
     private int currentStreak;
     private int totalPoints;
+
+    @OneToMany(mappedBy="account",fetch=FetchType.EAGER)
+    private List<Task> tasks;
     protected Account() {}
     public Account(String username, String email, String password) {
         this.username = username;
@@ -25,6 +28,7 @@ public class Account {
         this.bestStreak = 0;
         this.currentStreak = 0;
         this.totalPoints = 0;
+        this.tasks = new ArrayList<>();
     }
 
     public long getAccountID() {
@@ -83,6 +87,14 @@ public class Account {
         this.totalPoints = totalPoints;
     }
 
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void addTasks(Task task) {
+        this.tasks.add(task);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -107,5 +119,10 @@ public class Account {
         return String.format(
                 "Account[id=%d, username='%s', email='%s', password='%s', bestStreak='%d', currentStreak='%d', totalPoints='%d']",
                 accountID, username, email, password, bestStreak, currentStreak, totalPoints);
+    }
+
+    public String taskToString(){
+        return null;
+        //return String.format("Task")
     }
 }

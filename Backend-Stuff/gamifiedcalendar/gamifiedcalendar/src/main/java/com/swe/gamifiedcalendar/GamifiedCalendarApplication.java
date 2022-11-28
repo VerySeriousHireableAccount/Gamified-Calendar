@@ -46,6 +46,16 @@ public class GamifiedCalendarApplication {
 			log.info("");
 
 			log.info("");
+
+			customer.addTasks(new Task("Laundry", "Do the laundry", 10, 1669661670, 1669661671, false));
+			repository.save(customer);
+			log.info("Tasks for account with ID 2:");
+			log.info("--------------------------------");
+			log.info(customer.getTasks().toString());
+			log.info("");
+
+			log.info("");
 		};
 	}
+
 }
