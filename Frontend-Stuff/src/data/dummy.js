@@ -21,7 +21,7 @@ export const links = [
     links: [
       //sublinks and its icon within the header links
       {
-        name: "Streak",
+        name: "streak",
         icon: <FiShoppingBag />,
       },
     ],
@@ -335,7 +335,7 @@ export const dropdownData = [
   },
   {
     Id: "3",
-    Time: "September 2022",
+    Time: "September",
   },
 ];
 //Recent task

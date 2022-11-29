@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 import { Button } from '.';
 import { userProfileData } from '../data/dummy';
@@ -52,13 +53,13 @@ const UserProfile = () => {
         ))}
       </div>
       <div className="mt-5">
-        <Button
-          color="white"
-          bgColor={currentColor}
-          text="Logout"
-          borderRadius="10px"
-          width="full"
-        />
+        <button
+          type="button"
+          onClick={() => setIsClicked(initialState)}
+          style={{ backgroundColor: currentColor, color: "white", borderRadius: "10px" }}
+          className=" text-xl p-3 w-full hover:drop-shadow-xl hover:bg-light-gray">
+          <Link to="/login">Logout</Link>
+        </button>
       </div>
     </div>
 
