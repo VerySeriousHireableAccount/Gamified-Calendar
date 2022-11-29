@@ -1,10 +1,9 @@
 import React from 'react';
-import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 
-import { Stacked, Button, LineChart, SparkLine } from '../components';
-import { recentTransactions, dropdownData, SparklineAreaData } from '../data/dummy';
+import { Button, LineChart } from '../components';
+import { recentTransactions, dropdownData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/images/product9.jpg';
 

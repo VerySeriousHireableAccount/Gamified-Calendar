@@ -21,7 +21,7 @@ export const links = [
     links: [
       //sublinks and its icon within the header links
       {
-        name: "Streak",
+        name: "streak",
         icon: <FiShoppingBag />,
       },
     ],
