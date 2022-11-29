@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
+import { Navbar, Sidebar, ThemeSettings } from "../components";
 import { Streak, Login, Calendar, Kanban, Line, Area } from "../pages";
 
 import { useStateContext } from "../contexts/ContextProvider";
@@ -68,7 +68,6 @@ const Dashboard = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={<Streak />} />
-                <Route path="/login" element={<Login />} />
                 <Route path="/streak" element={<Streak />} />
 
                 {/* apps  */}
@@ -80,7 +79,6 @@ const Dashboard = () => {
                 <Route path="/community" element={<Area />} />
               </Routes>
             </div>
-            <Footer />
           </div>
         </div>
     </div>

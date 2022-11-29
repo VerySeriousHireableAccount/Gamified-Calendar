@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Dashboard, Login } from "./pages";
+import { Dashboard, Login, Signin } from "./pages";
 import "./App.css";
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -23,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/*" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<Signin />} />
         </Routes>
       </BrowserRouter>
     </div>

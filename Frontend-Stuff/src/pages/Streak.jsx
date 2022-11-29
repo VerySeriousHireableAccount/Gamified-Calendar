@@ -6,6 +6,7 @@ import { Button, LineChart } from '../components';
 import { recentTransactions, dropdownData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/images/product9.jpg';
+import { Footer } from "../components";
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
@@ -167,6 +168,7 @@ const Streak = () => {
         </div>
         
       </div>
+      <Footer />
     </div>
   );
 };
