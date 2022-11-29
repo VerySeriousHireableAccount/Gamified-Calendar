@@ -15,6 +15,8 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [username, setUsername] = useState("Onii-chan");
+  const [email, setEmail] = useState("kawaii@moe.com");
+  const [password, setPassword] = useState("onichichi");
 
   const setMode = (e) => {
     setCurrentMode(e.target.value);
@@ -37,6 +39,8 @@ export const ContextProvider = ({ children }) => {
         activeMenu,
         screenSize,
         username,
+        email,
+        password,
         setScreenSize,
         handleClick,
         isClicked,
@@ -50,6 +54,8 @@ export const ContextProvider = ({ children }) => {
         themeSettings,
         setThemeSettings,
         setUsername,
+        setEmail,
+        setPassword,
       }}
     >
       {children}
