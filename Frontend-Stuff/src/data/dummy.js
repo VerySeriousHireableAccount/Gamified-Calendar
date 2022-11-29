@@ -15,6 +15,57 @@ import exclamationmark from "./images/yellow-mark.png";
 import checkmark from "./images/green-checkmark.png";
 //Sidebar info
 //Determine which header links contain which sublinks
+export const accounts = [
+  {
+    accountID: 1,
+    username: "martingarrix",
+    email: "mg@mg.com",
+    password: "highOnLife",
+    bestStreak: 0,
+    currentStreak: 0,
+    totalPoints: 0,
+    tasks: [],
+  },
+  {
+    accountID: 2,
+    username: "djsixbeeps",
+    email: "sixbeeps@sixbeeps.com",
+    password: "DG",
+    bestStreak: 0,
+    currentStreak: 0,
+    totalPoints: 0,
+    tasks: [
+      {
+        taskID: 1,
+        taskName: "Get dog food",
+        taskDescription: "stop getting Royale Canin, taste bad",
+        taskPoints: 10,
+        taskStartDate: 1669661670,
+        taskDeadline: 1669661671,
+        taskStatus: "Groceries",
+      },
+      {
+        taskID: 2,
+        taskName: "Trader Joe's run",
+        taskDescription: "cute cashier and cheap wine",
+        taskPoints: 10,
+        taskStartDate: 1669661670,
+        taskDeadline: 1669661671,
+        taskStatus: "Groceries",
+      },
+      {
+        taskID: 3,
+        taskName: "Call Jane",
+        taskDescription: "why jane no call me first?",
+        taskPoints: 10,
+        taskStartDate: 1669661695,
+        taskDeadline: 1669661668,
+        taskStatus: "Social",
+      },
+    ],
+  },
+];
+//Determine which header links contain which sublinks
 export const links = [
   {
     title: "Dashboard",
@@ -55,9 +106,9 @@ export const links = [
 ];
 //Kanband Grid
 export const kanbanGrid = [
-  { headerText: "Groceries", keyField: "Open", allowToggle: true },
+  { headerText: "Groceries", keyField: "Groceries", allowToggle: true },
 
-  { headerText: "Work", keyField: "InProgress", allowToggle: true },
+  { headerText: "Work", keyField: "Work", allowToggle: true },
 
   {
     headerText: "Misc",
@@ -66,62 +117,51 @@ export const kanbanGrid = [
     isExpanded: false,
   },
 
-  { headerText: "Social", keyField: "Close", allowToggle: true },
+  { headerText: "Social", keyField: "Social", allowToggle: true },
 ];
 
 export const kanbanData = [
   {
-    Id: "Task 1",
-    Title: "Task - 29001",
-    Status: "Open",
-    Summary: "Analyze the new requirements gathered from the customer.",
+    Id: accounts[1].tasks[0].taskID,
+    Title: accounts[1].tasks[0].taskName,
+    Status: accounts[1].tasks[0].taskStatus,
+    Summary: accounts[1].tasks[0].taskDescription,
     Type: "Story",
     Priority: "Low",
-    Tags: "Analyze,Customer",
     Estimate: 3.5,
-    Assignee: "Nancy Davloio",
-    RankId: 1,
     Color: "#02897B",
-    ClassName: "e-story, e-low, e-nancy-davloio",
   },
   {
-    Id: "Task 2",
-    Title: "Task - 29002",
-    Status: "InProgress",
-    Summary: "Improve application performance",
+    Id: accounts[1].tasks[1].taskID,
+    Title: accounts[1].tasks[1].taskName,
+    Status: accounts[1].tasks[1].taskStatus,
+    Summary: accounts[1].tasks[1].taskDescription,
     Type: "Improvement",
     Priority: "Normal",
-    Tags: "Improvement",
     Estimate: 6,
-    Assignee: "Andrew Fuller",
-    RankId: 1,
     Color: "#673AB8",
-    ClassName: "e-improvement, e-normal, e-andrew-fuller",
   },
   {
-    Id: "Task 3",
-    Title: "Task - 29003",
-    Status: "Open",
-    Summary: "Arrange a web meeting with the customer to get new requirements.",
-    Type: "Others",
-    Priority: "Critical",
-    Tags: "Meeting",
-    Estimate: 5.5,
-    Assignee: "Janet Leverling",
-    RankId: 2,
-    Color: "#1F88E5",
-    ClassName: "e-others, e-critical, e-janet-leverling",
+    Id: accounts[1].tasks[2].taskID,
+    Title: accounts[1].tasks[2].taskName,
+    Status: accounts[1].tasks[2].taskStatus,
+    Summary: accounts[1].tasks[2].taskDescription,
+    Type: "Improvement",
+    Priority: "Normal",
+    Estimate: 4,
+    Color: "#673AB8",
   },
 ];
 //Calendar
 export const scheduleData = [
   {
-    Id: 1,
-    Subject: "Explosion of Betelgeuse Star",
+    Id: accounts[1].tasks[0].taskID,
+    Subject: accounts[1].tasks[0].taskName,
     Location: "Space Center USA",
     StartTime: "2021-01-10T04:00:00.000Z",
     EndTime: "2021-01-10T05:30:00.000Z",
     CategoryColor: "#1aaa55",
+    Description: accounts[1].tasks[0].taskDescription,
   },
   {
     Id: 2,
@@ -130,6 +170,7 @@ export const scheduleData = [
     StartTime: "2021-01-11T06:30:00.000Z",
     EndTime: "2021-01-11T08:30:00.000Z",
     CategoryColor: "#357cd2",
+    Description: "nooooo",
   },
   {
     Id: 3,
@@ -138,6 +179,7 @@ export const scheduleData = [
     StartTime: "2021-01-12T04:00:00.000Z",
     EndTime: "2021-01-12T05:30:00.000Z",
     CategoryColor: "#7fa900",
+    Description: "yes",
   },
 ];
 
@@ -314,6 +356,7 @@ export const userProfileData = [
     desc: "Account Settings",
     iconColor: "#03C9D7",
     iconBg: "#E5FAFB",
+    link: "/",
   },
   {
     icon: <FiCreditCard />,
@@ -321,6 +364,7 @@ export const userProfileData = [
     desc: "To-do and Daily Tasks",
     iconColor: "rgb(255, 244, 229)",
     iconBg: "rgb(254, 201, 15)",
+    link: "/kanban",
   },
 ];
 //Streak Dashboard
