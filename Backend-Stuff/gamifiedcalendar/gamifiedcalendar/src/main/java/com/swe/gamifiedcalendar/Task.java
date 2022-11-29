@@ -16,30 +16,32 @@ public class Task {
     private long taskDeadline;
     private boolean taskStatus;
 
-    @ManyToOne
-    @JoinColumn(name = "account_account_id")
-    private Account account;
+    private String username;
 
-    public Account getAccount() {
-        return account;
+    public boolean isTaskStatus() {
+        return taskStatus;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Task(){
 
     }
 
-    public Task(String taskName, String taskDescription, int taskPoints, long taskStartDate, long taskDeadline, boolean taskStatus, Account account) {
+    public Task(String taskName, String taskDescription, int taskPoints, long taskStartDate, long taskDeadline, boolean taskStatus, String username) {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskPoints = taskPoints;
         this.taskStartDate = taskStartDate;
         this.taskDeadline = taskDeadline;
         this.taskStatus = taskStatus;
-        this.account = account;
+        this.username = username;
     }
 
     public long getTaskID() {
@@ -114,7 +116,7 @@ public class Task {
     @Override
     public String toString() {
         return String.format(
-                "Task[taskID=%d, taskName='%s', taskDescription='%s', taskPoints='%d', taskStartDate='%d', taskDeadline='%d', taskStatus='%b']",
-                taskID, taskName, taskDescription, taskPoints, taskStartDate, taskDeadline, taskStatus);
+                "Task[taskID=%d, taskName='%s', taskDescription='%s', taskPoints='%d', taskStartDate='%d', taskDeadline='%d', taskStatus='%b', username='%s']",
+                taskID, taskName, taskDescription, taskPoints, taskStartDate, taskDeadline, taskStatus, username);
     }
 }

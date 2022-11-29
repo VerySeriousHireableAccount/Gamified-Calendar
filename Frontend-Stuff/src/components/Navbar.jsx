@@ -6,6 +6,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/images/avatar.jpg';
 import { Notification, UserProfile } from '.';
+import { accounts } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
