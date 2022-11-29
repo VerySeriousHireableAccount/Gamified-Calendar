@@ -1,9 +1,6 @@
 package com.swe.gamifiedcalendar;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import javax.persistence.*;
 
 @Entity
@@ -18,8 +15,6 @@ public class Account {
     private int currentStreak;
     private int totalPoints;
 
-    @OneToMany(cascade=CascadeType.ALL,mappedBy="account",fetch=FetchType.EAGER)
-    private List<Task> tasks;
     protected Account() {}
     public Account(String username, String email, String password) {
         this.username = username;
@@ -84,14 +79,6 @@ public class Account {
 
     public void setTotalPoints(int totalPoints) {
         this.totalPoints = totalPoints;
-    }
-
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void addTasks(Task task) {
-        this.tasks.add(task);
     }
 
     @Override

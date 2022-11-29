@@ -46,16 +46,24 @@ public class GamifiedCalendarApplication {
 			log.info("");
 
 			log.info("");
-
+			Task t = new Task("Laundry", "Do the laundry", 10, 1669661670, 1669661671, false, "djsixbeeps");
 			//customer.addTasks(new Task("Laundry", "Do the laundry", 10, 1669661670, 1669661671, false));
-			taskRepository.save(new Task("Laundry", "Do the laundry", 10, 1669661670, 1669661671, false, customer));
+			taskRepository.save(t);
 			customer = repository.findById(2L);
 			log.info("Tasks for account with ID 2:");
 			log.info("--------------------------------");
-			log.info(customer.getTasks().toString());
+			log.info(taskRepository.findAllByUsername("djsixbeeps").toString());
 			log.info("");
 
 			log.info("");
+			Task t2 = new Task("Homework", "Finish homework", 20, 1669666671, 1669666672, false, "djsixbeeps");
+			//taskRepository.delete(t);
+			taskRepository.save(t2);
+			log.info("Tasks for account with ID 2:");
+			log.info("--------------------------------");
+			log.info(taskRepository.findAllByUsername("djsixbeeps").toString());
+			log.info("");
+
 		};
 	}
 

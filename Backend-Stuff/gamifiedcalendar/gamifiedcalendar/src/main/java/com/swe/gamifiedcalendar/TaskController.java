@@ -22,23 +22,23 @@ class TaskController {
 
     // Aggregate root
     // tag::get-aggregate-root[]
-    @GetMapping("/Tasks")
+    @GetMapping("/tasks")
     List<Task> all() {
         return (List<Task>) repository.findAll();
     }
     // end::get-aggregate-root[]
 
-    @PostMapping("/Tasks")
+    @PostMapping("/tasks")
     Task newTask(@RequestBody Task newTask) {
         return repository.save(newTask);
     }
 
-    @GetMapping("/Tasks/{id}")
-    List<Task> allForAccount(@PathVariable Long id){
-        return null;
+    @GetMapping("/tasks/{username}")
+    List<Task> allForAccount(@PathVariable String username){
+        return repository.findAllByUsername(username);
     }
 
-    @DeleteMapping("/Tasks/{id}")
+    @DeleteMapping("/tasks/{id}")
     void deleteTask(@PathVariable Long id) {
         repository.deleteById(id);
     }

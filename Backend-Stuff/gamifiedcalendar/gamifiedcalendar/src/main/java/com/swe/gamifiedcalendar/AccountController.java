@@ -1,6 +1,7 @@
 package com.swe.gamifiedcalendar;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +18,6 @@ class AccountController {
 
     AccountController(AccountRepository repository) {
         this.repository = repository;
-    }
-
-    @GetMapping("/Accounts/Tasks/{id}")
-    Account tasksForAccount(@PathVariable Long id) {
-        return repository.findById(id).get();
     }
 
 
