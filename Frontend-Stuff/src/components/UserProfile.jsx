@@ -9,7 +9,7 @@ import avatar from '../data/images/avatar.jpg';
 import { accounts } from '../data/dummy';
 
 const UserProfile = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, username, email } = useStateContext();
 
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
@@ -30,9 +30,9 @@ const UserProfile = () => {
           alt="user-profile"
         />
         <div>
-          <p className="font-semibold text-xl dark:text-gray-200"> {accounts[0].username} </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">  {accounts[0].totalPoints} points   </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> {accounts[0].email} </p>
+          <p className="font-semibold text-xl dark:text-gray-200"> {username} </p>
+          <p className="text-gray-500 text-sm dark:text-gray-400">  Productive King   </p>
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> {email} </p>
         </div>
       </div>
       <div>
