@@ -4,7 +4,8 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Sidebar, ThemeSettings } from "../components";
-import { Streak, Login, Calendar, Kanban, Line, Area } from "../pages";
+import { Streak, Calendar, Kanban, Line, Area } from "../pages";
+import Home from "../data/backendData";
 
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -74,8 +75,9 @@ const Dashboard = () => {
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/calendar" element={<Calendar />} />
 
-                {/* charts  */}
+                {/* charts  */}Home
                 <Route path="/line" element={<Line />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/community" element={<Area />} />
               </Routes>
             </div>
