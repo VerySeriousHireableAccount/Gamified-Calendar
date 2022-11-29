@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
+import { useStateContext } from '../contexts/ContextProvider';
 
 export default function Login() {
+    const { setUsername } = useStateContext();
+    const [inputValue, setInputValue] = React.useState("");
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
         <div className='hidden sm:block'/>
@@ -11,7 +14,7 @@ export default function Login() {
                 <h2 className='text-4xl dark:text-white font-bold text-center'>SIGN IN</h2>
                 <div className='flex flex-col text-gray-400 py-2'>
                     <label>Username</label>
-                    <input className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" />
+                    <input onChange={e => setInputValue(e.target.value)} className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none' type="text" />
                 </div>
                 <div className='flex flex-col text-gray-400 py-2'>
                     <label>Password</label>
@@ -21,7 +24,7 @@ export default function Login() {
                     <p className='flex items-center'><input className='mr-2' type="checkbox" /> Remember Me</p>
                     <p>Forgot Password</p>
                 </div>
-                <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
+                <button onClick={() => setUsername(inputValue)} className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
                       <Link to="/dashboard">Please Log</Link>
                       <Link to="/signin"> In</Link>
                 </button>

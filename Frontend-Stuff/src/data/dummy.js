@@ -116,24 +116,24 @@ export const kanbanData = [
 //Calendar
 export const scheduleData = [
   {
-    Id: 1,
-    Subject: "Explosion of Betelgeuse Star",
+    Id: kanbanData[0].Id,
+    Subject: kanbanData[0].Title,
     Location: "Space Center USA",
     StartTime: "2021-01-10T04:00:00.000Z",
     EndTime: "2021-01-10T05:30:00.000Z",
     CategoryColor: "#1aaa55",
   },
   {
-    Id: 2,
-    Subject: "Thule Air Crash Report",
+    Id: kanbanData[1].Id,
+    Subject: kanbanData[1].Title,
     Location: "Newyork City",
     StartTime: "2021-01-11T06:30:00.000Z",
     EndTime: "2021-01-11T08:30:00.000Z",
     CategoryColor: "#357cd2",
   },
   {
-    Id: 3,
-    Subject: "Blue Moon Eclipse",
+    Id: kanbanData[2].Id,
+    Subject: kanbanData[2].Title,
     Location: "Space Center USA",
     StartTime: "2021-01-12T04:00:00.000Z",
     EndTime: "2021-01-12T05:30:00.000Z",
